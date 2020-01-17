@@ -13,7 +13,7 @@ const ProjectList = () => {
       .catch(err => console.log(err));
   }, []);
   return (
-    <div>
+    <div className="card-container">
       {projects.map(data => (
         <ProjectCard key={data.id} data={data} />
       ))}

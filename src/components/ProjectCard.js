@@ -30,6 +30,13 @@ export const ProjectCard = props => {
       .catch(err => console.log(err));
   };
 
+  const deleteProject = () => {
+    axios
+      .delete(`https://api1-sprint.herokuapp.com/api/projects/${id}`)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
+
   return (
     <div className="card">
       {edit ? (
@@ -58,7 +65,7 @@ export const ProjectCard = props => {
           <button onClick={() => isEditing()}> edit </button>
         </>
       )}
-      <button> delete </button>
+      <button onClick={deleteProject}> delete </button>
     </div>
   );
 };
